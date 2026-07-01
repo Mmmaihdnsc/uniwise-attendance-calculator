@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>SRM Attendance Calculator | UniWise</title>
-  <meta name="description" content="Calculate your SRM attendance percentage online. Learn how many classes can I miss and maintain 75% attendance at SRM Institute of Science and Technology.">
-  <meta name="keywords" content="SRM attendance calculator UniWise, SRM attendance rules, SRM safe absences calculator, SRM condonation rules, attendance calculator college, 75% attendance calculator">
+  <title>SRM Attendance Calculator (75% Condonation Rule) | UniWise</title>
+  <meta name="description" content="Use the SRM attendance calculator to track your percentage in real-time. Find out how many classes can I miss under SRM IST regulations.">
+  <meta name="keywords" content="SRM attendance calculator, 75% attendance calculator engineering, how many classes can I miss, attendance calculator college Tamil Nadu, Anna University attendance rule">
   <meta name="author" content="UniWise">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://uniwise.pages.dev/srm.html">
   <meta property="og:title" content="SRM Attendance Calculator | UniWise">
-  <meta property="og:description" content="Calculate your SRM attendance percentage online. Learn how many classes can I miss and maintain 75% attendance at SRM Institute of Science and Technology.">
+  <meta property="og:description" content="Use the SRM attendance calculator to track your percentage in real-time. Find out how many classes can I miss under SRM IST regulations.">
   <meta property="og:image" content="https://uniwise.pages.dev/assets/images/og-image.jpg">
 
   <!-- Stylesheet -->
@@ -28,18 +28,26 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What is the attendance policy in SRM IST?",
+        "name": "How many classes can I miss in SRM?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "At SRM Institute of Science and Technology, students are required to maintain a minimum of 75% attendance in each individual course to be eligible to sit for the semester end examinations."
+          "text": "Under the 75% rule at SRM Institute of Science and Technology, you can miss up to 25% of the total sessions. If you have conducted 60 sessions, you can safely miss up to 15 sessions."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the condonation limit for attendance in SRM?",
+        "name": "What happens if attendance is below 75% at SRM?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The condonation zone is between 65% and 75%. If a student's attendance falls within this range due to valid medical reasons or representing the institute in co-curricular activities, they can submit a request with proof and pay a condonation fee to secure their hall ticket."
+          "text": "If your attendance falls between 65% and 74%, you can get condoned by presenting valid medical proof and paying a condonation fee. Below 65%, you are debarred from examinations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is attendance calculated in engineering colleges?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Attendance is calculated as the ratio of hours attended to the total hours conducted, multiplied by 100."
         }
       }
     ]
@@ -67,131 +75,156 @@
 
   <!-- Main Content -->
   <main>
-    <!-- Ad banner top -->
+    <!-- Top Banner Ad -->
     <div class="ad-slot">
       <span>Place Ad Here (Google AdSense Responsive Banner Slot)</span>
     </div>
 
-    <!-- Layout Grid -->
-    <div class="main-layout">
-      <!-- Main Content Area -->
-      <div class="main-content">
-        <!-- Page Heading -->
-        <div style="margin-bottom: 1.5rem;">
-          <h1 style="font-size: 2.25rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">SRM Attendance Calculator</h1>
-          <p style="color: var(--text-secondary);">Track SRM IST Kattankulathur, Ramapuram, and Vadapalani semester attendance limits.</p>
+    <!-- H1 Title (SEO optimized) -->
+    <h1 style="font-size: 2.25rem; font-weight: 700; text-align: center; margin-bottom: 1.5rem; background: linear-gradient(135deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      SRM Attendance Calculator (75% Condonation Rule)
+    </h1>
+
+    <!-- Calculator Dashboard Widget at the TOP -->
+    <div class="dashboard-grid" style="margin-bottom: 2.5rem;">
+      <!-- Calculator Inputs Card -->
+      <div class="card">
+        <h2 class="card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--primary);"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
+          SRM IST Settings
+        </h2>
+        
+        <div class="form-group">
+          <label for="university">Select University / Institution</label>
+          <select id="university">
+            <option value="anna">Anna University (75% Rule)</option>
+            <option value="srm" selected>SRM Institute of Science and Technology (75%)</option>
+            <option value="sathyabama">Sathyabama Institute of Science & Tech (75%)</option>
+            <option value="vit">VIT University (80% - Adjustable)</option>
+            <option value="saveetha">Saveetha Engineering College (75%)</option>
+            <option value="hindustan">Hindustan Institute of Tech & Science (75%)</option>
+            <option value="custom">Custom (User-Defined %)</option>
+          </select>
         </div>
 
-        <!-- Dashboard Widget Container -->
-        <div class="dashboard-grid">
-          <!-- Calculator Card -->
-          <div class="card">
-            <h2 class="card-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--primary);"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
-              SRM IST Preset
-            </h2>
-            
-            <div class="form-group">
-              <label for="university">Select University / Institution</label>
-              <select id="university">
-                <option value="anna">Anna University (75% Rule)</option>
-                <option value="srm" selected>SRM Institute of Science and Technology (75%)</option>
-                <option value="sathyabama">Sathyabama Institute of Science & Tech (75%)</option>
-                <option value="vit">VIT University (80% - Adjustable)</option>
-                <option value="saveetha">Saveetha Engineering College (75%)</option>
-                <option value="hindustan">Hindustan Institute of Tech & Science (75%)</option>
-                <option value="custom">Custom (User-Defined %)</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="total-classes">Total Classes Conducted</label>
-              <div class="input-container">
-                <input type="number" id="total-classes" placeholder="e.g., 50" min="0">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="attended-classes">Classes Attended</label>
-              <div class="input-container">
-                <input type="number" id="attended-classes" placeholder="e.g., 40" min="0">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="required-percentage">Required Attendance Percentage (%)</label>
-              <div class="input-container">
-                <input type="number" id="required-percentage" value="75" min="0" max="100">
-              </div>
-            </div>
-
-            <div class="btn-group">
-              <button type="button" class="btn-secondary" id="btn-reset">Reset Fields</button>
-              <button type="button" class="btn-primary" id="btn-share">Share Result</button>
-            </div>
-          </div>
-
-          <!-- Outputs Card -->
-          <div class="card results-card">
-            <h2 class="card-title">Live Analysis</h2>
-            
-            <div class="status-ring-container">
-              <svg class="status-ring-svg">
-                <circle class="status-ring-bg" cx="90" cy="90" r="80"></circle>
-                <circle class="status-ring-progress" id="status-ring" cx="90" cy="90" r="80"></circle>
-              </svg>
-              <div class="status-ring-text">
-                <div class="attendance-percentage" id="attendance-value">0.0%</div>
-                <div class="attendance-label">Current Attendance</div>
-              </div>
-            </div>
-
-            <span class="status-badge" id="status-badge" style="background: rgba(255, 255, 255, 0.05); color: var(--text-secondary);">Enter Details</span>
-
-            <div class="metrics-grid">
-              <div class="metric-box">
-                <span class="metric-label">Safe Absences (can miss)</span>
-                <span class="metric-value" id="safe-absences-value">0</span>
-              </div>
-              <div class="metric-box">
-                <span class="metric-label">Classes to Attend (makeup)</span>
-                <span class="metric-value" id="classes-to-attend-value">0</span>
-              </div>
-            </div>
+        <div class="form-group">
+          <label for="total-classes">Total Classes Conducted</label>
+          <div class="input-container">
+            <input type="number" id="total-classes" placeholder="e.g., 50" min="0">
           </div>
         </div>
 
-        <!-- SEO Content -->
-        <div class="article-content">
-          <h2>SRM IST Attendance Policies & Regulations</h2>
-          <p>At SRM Institute of Science and Technology, maintaining attendance is vital for writing end semester exams. SRM students use our <strong>attendance calculator college</strong> tracker to stay on top of the mandatory <strong>75% attendance calculator</strong> rules. By typing your values in, you'll know precisely where you stand.</p>
-          
-          <p>If you're asking yourself <em>"how many classes can I miss?"</em>, remember that SRM checks attendance on a subject-by-subject basis via the Academia student portal. Keeping a healthy percentage of 75% or higher guarantees a stress-free exam entry.</p>
-
-          <h2>SRM Condonation Zone (65% to 74%)</h2>
-          <p>If your percentage falls into this bracket, you must submit a medical certificate or sports OD certificate alongside a condonation fee. Debarment happens if attendance goes below 65%, prompting students to re-register for the course or complete it during summer classes.</p>
-          
-          <p>For more detailed calculations, you can visit the <a href="index.html">main calculator homepage</a> or check our other guides.</p>
-
-          <h2>Frequently Asked Questions</h2>
-          <div class="faq-container">
-            <div class="faq-item">
-              <div class="faq-question">What is the debarment rule at SRM IST?</div>
-              <div class="faq-answer">
-                Students with attendance below 65% in any subject are debarred from the exam in that course. They will receive an 'I' grade and must re-register to repeat the subject.
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Can I edit my required attendance on the SRM calculator?</div>
-              <div class="faq-answer">
-                Yes, although the default preset is 75%, you can change the target percentage manually to track condonation limits (65%) or higher targets (e.g. 90%).
-              </div>
-            </div>
+        <div class="form-group">
+          <label for="attended-classes">Classes Attended</label>
+          <div class="input-container">
+            <input type="number" id="attended-classes" placeholder="e.g., 40" min="0">
           </div>
+        </div>
+
+        <div class="form-group">
+          <label for="required-percentage">Required Attendance Percentage (%)</label>
+          <div class="input-container">
+            <input type="number" id="required-percentage" value="75" min="0" max="100">
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn-secondary" id="btn-reset">Reset Fields</button>
+          <button type="button" class="btn-primary" id="btn-share">Share Result</button>
         </div>
       </div>
 
-      <!-- Sidebar Area -->
+      <!-- Calculator Outputs Card -->
+      <div class="card results-card">
+        <h2 class="card-title">Live Analysis</h2>
+        
+        <div class="status-ring-container">
+          <svg class="status-ring-svg">
+            <circle class="status-ring-bg" cx="90" cy="90" r="80"></circle>
+            <circle class="status-ring-progress" id="status-ring" cx="90" cy="90" r="80"></circle>
+          </svg>
+          <div class="status-ring-text">
+            <div class="attendance-percentage" id="attendance-value">0.0%</div>
+            <div class="attendance-label">Current Attendance</div>
+          </div>
+        </div>
+
+        <span class="status-badge" id="status-badge" style="background: rgba(255, 255, 255, 0.05); color: var(--text-secondary);">Enter Details</span>
+
+        <div class="metrics-grid">
+          <div class="metric-box">
+            <span class="metric-label">Safe Absences (can miss)</span>
+            <span class="metric-value" id="safe-absences-value">0</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-label">Classes to Attend (makeup)</span>
+            <span class="metric-value" id="classes-to-attend-value">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Layout Below Calculator -->
+    <div class="main-layout">
+      <!-- Main Content Area (Left) -->
+      <div class="main-content">
+        <div class="article-content">
+          
+          <h2>Understanding Your SRM Live Analysis</h2>
+          <p>The UniWise SRM calculator tracks your academic hours to give you key safety indicators:</p>
+          <ul>
+            <li><strong>Current Attendance:</strong> Displays your calculated average based on attended sessions.</li>
+            <li><strong>Safe Absences:</strong> Shows the number of upcoming sessions you can miss without dropping below the target limit.</li>
+            <li><strong>Required Makeup:</strong> Shows how many consecutive sessions you must attend to catch up if you are currently in the red zone.</li>
+          </ul>
+
+          <!-- In-Content Ad -->
+          <div class="ad-slot-in-content">
+            <span>In-Content Ad Space (AdSense In-Article Ad Slot)</span>
+          </div>
+
+          <h2>SRM IST Attendance Regulations</h2>
+          <p>SRM Institute of Science and Technology (SRM IST) mandates a minimum of 75% attendance in each registered course. Students check their logs using the Academia student portal to ensure they are on track. If your attendance falls between 65% and 74%, you can apply for condonation. This involves submitting official letters and documents (such as medical certificates or sports OD proof) to the department and paying a condonation fee. Drop below 65%, and you are debarred from exams, forcing you to repeat the subject during summer courses.</p>
+
+          <h2>How is Attendance Calculated in Engineering Colleges?</h2>
+          <p>Like most campuses in Tamil Nadu, SRM calculates attendance as the percentage of actual hours attended vs total conducted sessions. Our <strong>SRM attendance calculator</strong> helps you run this math instantly. For other institutions, check the <a href="index.html">main homepage</a> to run custom parameters.</p>
+
+          <h2>Compare Other University Rules</h2>
+          <p>Check guidelines and use preset calculators for other institutions:</p>
+          <div class="uni-presets">
+            <a href="anna-university.html" class="uni-preset-btn">Anna University (75%)</a>
+            <a href="vit.html" class="uni-preset-btn">VIT University (80%)</a>
+            <a href="sathyabama.html" class="uni-preset-btn">Sathyabama University (75%)</a>
+            <a href="saveetha.html" class="uni-preset-btn">Saveetha Engineering College (75%)</a>
+            <a href="hindustan.html" class="uni-preset-btn">HITS Padur (75%)</a>
+          </div>
+
+          <h2 style="margin-top: 2rem;">Frequently Asked Questions</h2>
+          <div class="faq-container">
+            <div class="faq-item">
+              <div class="faq-question">How many classes can I miss in SRM?</div>
+              <div class="faq-answer">
+                Under the 75% rule, you can miss up to 25% of the total sessions. If 60 sessions are conducted, you can safely miss 15.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">What happens if attendance is below 75%?</div>
+              <div class="faq-answer">
+                If your attendance is between 65% and 74%, you can get condoned by presenting valid medical proof and paying a condonation fee. Below 65%, you are debarred from examinations.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">How is attendance calculated in engineering colleges?</div>
+              <div class="faq-answer">
+                Your college attendance is calculated as: (Total attended hours / Total conducted hours) * 100. Our tool computes this in real-time.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Sidebar Area (Right) -->
       <div class="sidebar">
         <!-- Sidebar Ad Slot -->
         <div class="ad-slot ad-slot-sidebar">

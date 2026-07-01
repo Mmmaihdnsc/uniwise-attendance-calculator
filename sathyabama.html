@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Sathyabama Attendance Calculator | UniWise</title>
-  <meta name="description" content="Calculate your Sathyabama attendance percentage online. Check Sathyabama rules, 75% attendance calculator limits, and condonation requirements on UniWise.">
-  <meta name="keywords" content="Sathyabama attendance calculator UniWise, Sathyabama attendance rules, Sathyabama hall ticket attendance requirement, attendance calculator college, 75% attendance calculator, how many classes can I miss">
+  <title>Sathyabama Attendance Calculator (75% Hall Ticket Rule) | UniWise</title>
+  <meta name="description" content="Use the Sathyabama attendance calculator to check your percentage. Find out how many classes can I miss and maintain the 75% attendance rule for hall tickets.">
+  <meta name="keywords" content="Sathyabama attendance calculator UniWise, 75% attendance calculator engineering, how many classes can I miss, attendance calculator college Tamil Nadu, Anna University attendance rule">
   <meta name="author" content="UniWise">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://uniwise.pages.dev/sathyabama.html">
   <meta property="og:title" content="Sathyabama Attendance Calculator | UniWise">
-  <meta property="og:description" content="Calculate your Sathyabama attendance percentage online. Check Sathyabama rules, 75% attendance calculator limits, and condonation requirements on UniWise.">
+  <meta property="og:description" content="Use the Sathyabama attendance calculator to check your percentage. Find out how many classes can I miss and maintain the 75% attendance rule for hall tickets.">
   <meta property="og:image" content="https://uniwise.pages.dev/assets/images/og-image.jpg">
 
   <!-- Stylesheet -->
@@ -28,18 +28,26 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What is the attendance requirement at Sathyabama University?",
+        "name": "How many classes can I miss in Sathyabama?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sathyabama Institute of Science and Technology requires students to maintain a minimum of 75% attendance in each course to be eligible to receive the semester exam hall ticket."
+          "text": "Under the 75% rule at Sathyabama Institute of Science and Technology, you can miss up to 25% of the total sessions. If 80 sessions are conducted, you can safely miss up to 20 sessions."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the shortage rule at Sathyabama?",
+        "name": "What happens if attendance is below 75% at Sathyabama?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "If attendance is between 65% and 74%, you can get condoned. If it is below 65%, you are debarred from examinations and must repeat the semester."
+          "text": "If your attendance falls between 65% and 74%, you can get condoned by presenting valid medical proof and paying a condonation fee. Below 65%, you are debarred from examinations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is attendance calculated in engineering colleges?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Attendance is calculated by dividing your total attended contact hours by the total hours conducted by the college, multiplied by 100."
         }
       }
     ]
@@ -67,129 +75,156 @@
 
   <!-- Main Content -->
   <main>
-    <!-- Ad banner top -->
+    <!-- Top Banner Ad -->
     <div class="ad-slot">
       <span>Place Ad Here (Google AdSense Responsive Banner Slot)</span>
     </div>
 
-    <!-- Layout Grid -->
-    <div class="main-layout">
-      <!-- Main Content Area -->
-      <div class="main-content">
-        <!-- Page Heading -->
-        <div style="margin-bottom: 1.5rem;">
-          <h1 style="font-size: 2.25rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Sathyabama Attendance Calculator</h1>
-          <p style="color: var(--text-secondary);">Verify Sathyabama Institute of Science and Technology attendance limits and safe absences.</p>
+    <!-- H1 Title (SEO optimized) -->
+    <h1 style="font-size: 2.25rem; font-weight: 700; text-align: center; margin-bottom: 1.5rem; background: linear-gradient(135deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      Sathyabama Attendance Calculator (75% Hall Ticket Rule)
+    </h1>
+
+    <!-- Calculator Dashboard Widget at the TOP -->
+    <div class="dashboard-grid" style="margin-bottom: 2.5rem;">
+      <!-- Calculator Inputs Card -->
+      <div class="card">
+        <h2 class="card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--primary);"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
+          Sathyabama Settings
+        </h2>
+        
+        <div class="form-group">
+          <label for="university">Select University / Institution</label>
+          <select id="university">
+            <option value="anna">Anna University (75% Rule)</option>
+            <option value="srm">SRM Institute of Science and Technology (75%)</option>
+            <option value="sathyabama" selected>Sathyabama Institute of Science & Tech (75%)</option>
+            <option value="vit">VIT University (80% - Adjustable)</option>
+            <option value="saveetha">Saveetha Engineering College (75%)</option>
+            <option value="hindustan">Hindustan Institute of Tech & Science (75%)</option>
+            <option value="custom">Custom (User-Defined %)</option>
+          </select>
         </div>
 
-        <!-- Dashboard Widget Container -->
-        <div class="dashboard-grid">
-          <!-- Calculator Card -->
-          <div class="card">
-            <h2 class="card-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--primary);"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
-              Sathyabama Preset
-            </h2>
-            
-            <div class="form-group">
-              <label for="university">Select University / Institution</label>
-              <select id="university">
-                <option value="anna">Anna University (75% Rule)</option>
-                <option value="srm">SRM Institute of Science and Technology (75%)</option>
-                <option value="sathyabama" selected>Sathyabama Institute of Science & Tech (75%)</option>
-                <option value="vit">VIT University (80% - Adjustable)</option>
-                <option value="saveetha">Saveetha Engineering College (75%)</option>
-                <option value="hindustan">Hindustan Institute of Tech & Science (75%)</option>
-                <option value="custom">Custom (User-Defined %)</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="total-classes">Total Classes Conducted</label>
-              <div class="input-container">
-                <input type="number" id="total-classes" placeholder="e.g., 70" min="0">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="attended-classes">Classes Attended</label>
-              <div class="input-container">
-                <input type="number" id="attended-classes" placeholder="e.g., 55" min="0">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="required-percentage">Required Attendance Percentage (%)</label>
-              <div class="input-container">
-                <input type="number" id="required-percentage" value="75" min="0" max="100">
-              </div>
-            </div>
-
-            <div class="btn-group">
-              <button type="button" class="btn-secondary" id="btn-reset">Reset Fields</button>
-              <button type="button" class="btn-primary" id="btn-share">Share Result</button>
-            </div>
-          </div>
-
-          <!-- Outputs Card -->
-          <div class="card results-card">
-            <h2 class="card-title">Live Analysis</h2>
-            
-            <div class="status-ring-container">
-              <svg class="status-ring-svg">
-                <circle class="status-ring-bg" cx="90" cy="90" r="80"></circle>
-                <circle class="status-ring-progress" id="status-ring" cx="90" cy="90" r="80"></circle>
-              </svg>
-              <div class="status-ring-text">
-                <div class="attendance-percentage" id="attendance-value">0.0%</div>
-                <div class="attendance-label">Current Attendance</div>
-              </div>
-            </div>
-
-            <span class="status-badge" id="status-badge" style="background: rgba(255, 255, 255, 0.05); color: var(--text-secondary);">Enter Details</span>
-
-            <div class="metrics-grid">
-              <div class="metric-box">
-                <span class="metric-label">Safe Absences (can miss)</span>
-                <span class="metric-value" id="safe-absences-value">0</span>
-              </div>
-              <div class="metric-box">
-                <span class="metric-label">Classes to Attend (makeup)</span>
-                <span class="metric-value" id="classes-to-attend-value">0</span>
-              </div>
-            </div>
+        <div class="form-group">
+          <label for="total-classes">Total Classes Conducted</label>
+          <div class="input-container">
+            <input type="number" id="total-classes" placeholder="e.g., 70" min="0">
           </div>
         </div>
 
-        <!-- SEO Content -->
-        <div class="article-content">
-          <h2>Sathyabama Institute of Science and Technology Attendance Rules</h2>
-          <p>Sathyabama Institute of Science and Technology enforces a strict class presence framework. Under university regulations, students need to maintain a <strong>75% attendance calculator</strong> score in each subject to ensure hall ticket release.</p>
-          
-          <p>Using our <strong>attendance calculator college</strong> widget, Sathyabama students can see their status in real-time. If you find your values dropping, the tool calculates exactly how many consecutive classes you must attend to catch up. A link to the <a href="index.html">main homepage</a> helps you try other presets.</p>
-
-          <h2>Sathyabama Condonation & Shortage Details</h2>
-          <p>Shortages below 75% down to 65% are subject to a condonation fine upon submitting official medical letters. Below 65%, no condonation will be approved, meaning the student is debarred from exams and must register to repeat the semester courses.</p>
-
-          <h2>Frequently Asked Questions</h2>
-          <div class="faq-container">
-            <div class="faq-item">
-              <div class="faq-question">What is the debarment rule at Sathyabama?</div>
-              <div class="faq-answer">
-                Students with overall attendance below 65% are debarred. They are not allowed to sit for final semester examinations and must register for the courses in later semesters.
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">How can I check my attendance at Sathyabama?</div>
-              <div class="faq-answer">
-                Students can check their subject-wise attendance logs directly on the official Sathyabama student portal.
-              </div>
-            </div>
+        <div class="form-group">
+          <label for="attended-classes">Classes Attended</label>
+          <div class="input-container">
+            <input type="number" id="attended-classes" placeholder="e.g., 55" min="0">
           </div>
+        </div>
+
+        <div class="form-group">
+          <label for="required-percentage">Required Attendance Percentage (%)</label>
+          <div class="input-container">
+            <input type="number" id="required-percentage" value="75" min="0" max="100">
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn-secondary" id="btn-reset">Reset Fields</button>
+          <button type="button" class="btn-primary" id="btn-share">Share Result</button>
         </div>
       </div>
 
-      <!-- Sidebar Area -->
+      <!-- Calculator Outputs Card -->
+      <div class="card results-card">
+        <h2 class="card-title">Live Analysis</h2>
+        
+        <div class="status-ring-container">
+          <svg class="status-ring-svg">
+            <circle class="status-ring-bg" cx="90" cy="90" r="80"></circle>
+            <circle class="status-ring-progress" id="status-ring" cx="90" cy="90" r="80"></circle>
+          </svg>
+          <div class="status-ring-text">
+            <div class="attendance-percentage" id="attendance-value">0.0%</div>
+            <div class="attendance-label">Current Attendance</div>
+          </div>
+        </div>
+
+        <span class="status-badge" id="status-badge" style="background: rgba(255, 255, 255, 0.05); color: var(--text-secondary);">Enter Details</span>
+
+        <div class="metrics-grid">
+          <div class="metric-box">
+            <span class="metric-label">Safe Absences (can miss)</span>
+            <span class="metric-value" id="safe-absences-value">0</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-label">Classes to Attend (makeup)</span>
+            <span class="metric-value" id="classes-to-attend-value">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Layout Below Calculator -->
+    <div class="main-layout">
+      <!-- Main Content Area (Left) -->
+      <div class="main-content">
+        <div class="article-content">
+          
+          <h2>Understanding Your Sathyabama Live Metrics</h2>
+          <p>The UniWise Sathyabama calculator tracks your classroom attendance based on your portal logs:</p>
+          <ul>
+            <li><strong>Current Attendance:</strong> Displays your calculated average based on attended sessions.</li>
+            <li><strong>Safe Absences:</strong> Shows the number of upcoming sessions you can miss without dropping below the target limit.</li>
+            <li><strong>Required Makeup:</strong> Shows how many consecutive sessions you must attend to catch up if you are currently in the red zone.</li>
+          </ul>
+
+          <!-- In-Content Ad -->
+          <div class="ad-slot-in-content">
+            <span>In-Content Ad Space (AdSense In-Article Ad Slot)</span>
+          </div>
+
+          <h2>Sathyabama Institute of Science and Technology Attendance Rules</h2>
+          <p>Sathyabama Institute of Science and Technology requires students to secure a minimum of 75% attendance in each registered course. Students check their logs using the official student portal to ensure they are on track. If your attendance falls between 65% and 74%, you can apply for condonation. This involves submitting official letters and documents (such as medical certificates or sports OD proof) to the department and paying a condonation fee. Drop below 65%, and you are debarred from exams, forcing you to repeat the subject during future semesters.</p>
+
+          <h2>How is Attendance Calculated in Engineering Colleges?</h2>
+          <p>Sathyabama calculates attendance as the percentage of actual hours attended vs total conducted sessions. Our <strong>Sathyabama attendance calculator</strong> helps you run this math instantly. For other institutions, check the <a href="index.html">main homepage</a> to run custom parameters.</p>
+
+          <h2>Compare Other University Rules</h2>
+          <p>Check guidelines and use preset calculators for other institutions:</p>
+          <div class="uni-presets">
+            <a href="anna-university.html" class="uni-preset-btn">Anna University (75%)</a>
+            <a href="srm.html" class="uni-preset-btn">SRM University (75%)</a>
+            <a href="vit.html" class="uni-preset-btn">VIT University (80%)</a>
+            <a href="saveetha.html" class="uni-preset-btn">Saveetha Engineering College (75%)</a>
+            <a href="hindustan.html" class="uni-preset-btn">HITS Padur (75%)</a>
+          </div>
+
+          <h2 style="margin-top: 2rem;">Frequently Asked Questions</h2>
+          <div class="faq-container">
+            <div class="faq-item">
+              <div class="faq-question">How many classes can I miss in Sathyabama?</div>
+              <div class="faq-answer">
+                Under the 75% rule, you can miss up to 25% of the total sessions. If 80 sessions are conducted, you can safely miss 20.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">What happens if attendance is below 75%?</div>
+              <div class="faq-answer">
+                If your attendance is between 65% and 74%, you must pay a condonation fee and present medical or OD proof to get your hall ticket. Below 65%, you are debarred from writing exams.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">How is attendance calculated in engineering colleges?</div>
+              <div class="faq-answer">
+                Your college attendance is calculated as: (Total attended hours / Total conducted hours) * 100. Our tool computes this in real-time.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Sidebar Area (Right) -->
       <div class="sidebar">
         <!-- Sidebar Ad Slot -->
         <div class="ad-slot ad-slot-sidebar">

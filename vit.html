@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>VIT Attendance Calculator | UniWise</title>
-  <meta name="description" content="Calculate your VIT University attendance percentage online. Check how many classes can I miss and maintain 80% attendance under the FFCS system.">
-  <meta name="keywords" content="VIT attendance calculator UniWise, VIT 80 attendance calculator, VIT debarment rules, VIT safe absences, attendance calculator college, 75% attendance calculator">
+  <title>VIT Attendance Calculator (80% FFCS Rule) | UniWise</title>
+  <meta name="description" content="Use the VIT attendance calculator to track your percentage. Find out how many classes can I miss and maintain the 80% attendance rule under the FFCS system.">
+  <meta name="keywords" content="VIT attendance calculator, 75% attendance calculator engineering, how many classes can I miss, attendance calculator college Tamil Nadu, Anna University attendance rule">
   <meta name="author" content="UniWise">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://uniwise.pages.dev/vit.html">
   <meta property="og:title" content="VIT Attendance Calculator | UniWise">
-  <meta property="og:description" content="Calculate your VIT University attendance percentage online. Check how many classes can I miss and maintain 80% attendance under the FFCS system.">
+  <meta property="og:description" content="Use the VIT attendance calculator to track your percentage. Find out how many classes can I miss and maintain the 80% attendance rule under the FFCS system.">
   <meta property="og:image" content="https://uniwise.pages.dev/assets/images/og-image.jpg">
 
   <!-- Stylesheet -->
@@ -28,18 +28,26 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What is the minimum attendance required in VIT?",
+        "name": "How many classes can I miss in VIT?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "At Vellore Institute of Technology (VIT), students must maintain a minimum of 80% attendance in each course to be eligible to appear for the semester exams."
+          "text": "Under the 80% default rule at VIT University, you can miss up to 20% of the total sessions. If 40 sessions are conducted, you can safely miss up to 8 sessions."
         }
       },
       {
         "@type": "Question",
-        "name": "Who gets attendance exemption in VIT?",
+        "name": "What happens if my attendance drops below 75% in VIT?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Students with an overall CGPA of 9.0 or above enjoy an attendance waiver. They are exempt from the 80% attendance requirement under the Fully Flexible Credit System (FFCS)."
+          "text": "The absolute debarment floor is 75% under medical/extraordinary cases. If attendance drops below 75%, there is no condonation, and the student is debarred from the course."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is attendance calculated in engineering colleges?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Attendance is calculated as the ratio of hours attended to the total hours conducted, multiplied by 100."
         }
       }
     ]
@@ -67,131 +75,156 @@
 
   <!-- Main Content -->
   <main>
-    <!-- Ad banner top -->
+    <!-- Top Banner Ad -->
     <div class="ad-slot">
       <span>Place Ad Here (Google AdSense Responsive Banner Slot)</span>
     </div>
 
-    <!-- Layout Grid -->
-    <div class="main-layout">
-      <!-- Main Content Area -->
-      <div class="main-content">
-        <!-- Page Heading -->
-        <div style="margin-bottom: 1.5rem;">
-          <h1 style="font-size: 2.25rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">VIT Attendance Calculator</h1>
-          <p style="color: var(--text-secondary);">Dedicated attendance calculations for Vellore Institute of Technology students.</p>
+    <!-- H1 Title (SEO optimized) -->
+    <h1 style="font-size: 2.25rem; font-weight: 700; text-align: center; margin-bottom: 1.5rem; background: linear-gradient(135deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      VIT Attendance Calculator (80% FFCS Rule)
+    </h1>
+
+    <!-- Calculator Dashboard Widget at the TOP -->
+    <div class="dashboard-grid" style="margin-bottom: 2.5rem;">
+      <!-- Calculator Inputs Card -->
+      <div class="card">
+        <h2 class="card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--primary);"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
+          VIT Settings
+        </h2>
+        
+        <div class="form-group">
+          <label for="university">Select University / Institution</label>
+          <select id="university">
+            <option value="anna">Anna University (75% Rule)</option>
+            <option value="srm">SRM Institute of Science and Technology (75%)</option>
+            <option value="sathyabama">Sathyabama Institute of Science & Tech (75%)</option>
+            <option value="vit" selected>VIT University (80% - Adjustable)</option>
+            <option value="saveetha">Saveetha Engineering College (75%)</option>
+            <option value="hindustan">Hindustan Institute of Tech & Science (75%)</option>
+            <option value="custom">Custom (User-Defined %)</option>
+          </select>
         </div>
 
-        <!-- Dashboard Widget Container -->
-        <div class="dashboard-grid">
-          <!-- Calculator Card -->
-          <div class="card">
-            <h2 class="card-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--primary);"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
-              VIT University Preset
-            </h2>
-            
-            <div class="form-group">
-              <label for="university">Select University / Institution</label>
-              <select id="university">
-                <option value="anna">Anna University (75% Rule)</option>
-                <option value="srm">SRM Institute of Science and Technology (75%)</option>
-                <option value="sathyabama">Sathyabama Institute of Science & Tech (75%)</option>
-                <option value="vit" selected>VIT University (80% - Adjustable)</option>
-                <option value="saveetha">Saveetha Engineering College (75%)</option>
-                <option value="hindustan">Hindustan Institute of Tech & Science (75%)</option>
-                <option value="custom">Custom (User-Defined %)</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="total-classes">Total Classes Conducted</label>
-              <div class="input-container">
-                <input type="number" id="total-classes" placeholder="e.g., 40" min="0">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="attended-classes">Classes Attended</label>
-              <div class="input-container">
-                <input type="number" id="attended-classes" placeholder="e.g., 34" min="0">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="required-percentage">Required Attendance Percentage (%)</label>
-              <div class="input-container">
-                <input type="number" id="required-percentage" value="80" min="0" max="100">
-              </div>
-            </div>
-
-            <div class="btn-group">
-              <button type="button" class="btn-secondary" id="btn-reset">Reset Fields</button>
-              <button type="button" class="btn-primary" id="btn-share">Share Result</button>
-            </div>
-          </div>
-
-          <!-- Outputs Card -->
-          <div class="card results-card">
-            <h2 class="card-title">Live Analysis</h2>
-            
-            <div class="status-ring-container">
-              <svg class="status-ring-svg">
-                <circle class="status-ring-bg" cx="90" cy="90" r="80"></circle>
-                <circle class="status-ring-progress" id="status-ring" cx="90" cy="90" r="80"></circle>
-              </svg>
-              <div class="status-ring-text">
-                <div class="attendance-percentage" id="attendance-value">0.0%</div>
-                <div class="attendance-label">Current Attendance</div>
-              </div>
-            </div>
-
-            <span class="status-badge" id="status-badge" style="background: rgba(255, 255, 255, 0.05); color: var(--text-secondary);">Enter Details</span>
-
-            <div class="metrics-grid">
-              <div class="metric-box">
-                <span class="metric-label">Safe Absences (can miss)</span>
-                <span class="metric-value" id="safe-absences-value">0</span>
-              </div>
-              <div class="metric-box">
-                <span class="metric-label">Classes to Attend (makeup)</span>
-                <span class="metric-value" id="classes-to-attend-value">0</span>
-              </div>
-            </div>
+        <div class="form-group">
+          <label for="total-classes">Total Classes Conducted</label>
+          <div class="input-container">
+            <input type="number" id="total-classes" placeholder="e.g., 40" min="0">
           </div>
         </div>
 
-        <!-- SEO Content -->
-        <div class="article-content">
-          <h2>VIT University Attendance Rules & Exemption Details</h2>
-          <p>Vellore Institute of Technology (VIT) implements a Fully Flexible Credit System (FFCS) monitored through the VTOP student portal. VIT differs from standard institutions by enforcing an **80% default attendance rule** for theory and practical courses.</p>
-          
-          <p>For students checking <em>"how many classes can I miss"</em> to stay above debarment, maintaining an 80% average is critical. If attendance falls below 80% down to 75%, a medical certificate might get you condoned. Under 75%, debarment is automatic and absolute.</p>
-
-          <h2>The 9.0 CGPA Exemption (9 Pointers)</h2>
-          <p>Exemptions are granted under VIT rules for students with an overall CGPA of **9.0 or above**. These high-performing students have their attendance requirements waived and can miss classes safely. However, standard students must continue using the <strong>80% attendance calculator</strong> features to monitor margins.</p>
-          
-          <p>For standard calculations, check out the <a href="index.html">UniWise home portal</a>.</p>
-
-          <h2>Frequently Asked Questions</h2>
-          <div class="faq-container">
-            <div class="faq-item">
-              <div class="faq-question">What happens if a student is debarred in VIT?</div>
-              <div class="faq-answer">
-                Debarred students are not permitted to write the Term End Exams (TEE) for that subject. They receive a debarred status and must register to clear the subject as a repeat course in future semesters.
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">Can I use this for VIT Chennai or Bhopal campuses?</div>
-              <div class="faq-answer">
-                Yes, all VIT campuses (Vellore, Chennai, AP, Bhopal) follow the same VTOP-managed 80% default attendance guidelines.
-              </div>
-            </div>
+        <div class="form-group">
+          <label for="attended-classes">Classes Attended</label>
+          <div class="input-container">
+            <input type="number" id="attended-classes" placeholder="e.g., 34" min="0">
           </div>
+        </div>
+
+        <div class="form-group">
+          <label for="required-percentage">Required Attendance Percentage (%)</label>
+          <div class="input-container">
+            <input type="number" id="required-percentage" value="80" min="0" max="100">
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" class="btn-secondary" id="btn-reset">Reset Fields</button>
+          <button type="button" class="btn-primary" id="btn-share">Share Result</button>
         </div>
       </div>
 
-      <!-- Sidebar Area -->
+      <!-- Calculator Outputs Card -->
+      <div class="card results-card">
+        <h2 class="card-title">Live Analysis</h2>
+        
+        <div class="status-ring-container">
+          <svg class="status-ring-svg">
+            <circle class="status-ring-bg" cx="90" cy="90" r="80"></circle>
+            <circle class="status-ring-progress" id="status-ring" cx="90" cy="90" r="80"></circle>
+          </svg>
+          <div class="status-ring-text">
+            <div class="attendance-percentage" id="attendance-value">0.0%</div>
+            <div class="attendance-label">Current Attendance</div>
+          </div>
+        </div>
+
+        <span class="status-badge" id="status-badge" style="background: rgba(255, 255, 255, 0.05); color: var(--text-secondary);">Enter Details</span>
+
+        <div class="metrics-grid">
+          <div class="metric-box">
+            <span class="metric-label">Safe Absences (can miss)</span>
+            <span class="metric-value" id="safe-absences-value">0</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-label">Classes to Attend (makeup)</span>
+            <span class="metric-value" id="classes-to-attend-value">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Layout Below Calculator -->
+    <div class="main-layout">
+      <!-- Main Content Area (Left) -->
+      <div class="main-content">
+        <div class="article-content">
+          
+          <h2>Understanding Your VIT Live Analysis</h2>
+          <p>The UniWise VIT dashboard tracks your classroom attendance based on your VTOP logs:</p>
+          <ul>
+            <li><strong>Current Attendance:</strong> Displays your calculated average based on attended sessions.</li>
+            <li><strong>Safe Absences:</strong> Shows the number of upcoming sessions you can miss without dropping below the target limit.</li>
+            <li><strong>Required Makeup:</strong> Shows how many consecutive sessions you must attend to catch up if you are currently in the red zone.</li>
+          </ul>
+
+          <!-- In-Content Ad -->
+          <div class="ad-slot-in-content">
+            <span>In-Content Ad Space (AdSense In-Article Ad Slot)</span>
+          </div>
+
+          <h2>VIT University Attendance Regulations & FFCS Rules</h2>
+          <p>Vellore Institute of Technology (VIT) has a strict attendance policy under the Fully Flexible Credit System (FFCS). Regular students must maintain a minimum of <strong>80% attendance</strong> in each course. A medical condonation may lower this limit to 75% in case of severe illness, but dropping below 75% results in automatic debarment. However, students with a CGPA of 9.0 or higher enjoy an attendance waiver and are exempt from the 80% rule.</p>
+
+          <h2>How is Attendance Calculated in Engineering Colleges?</h2>
+          <p>VIT calculates attendance as the percentage of actual hours attended vs total conducted sessions. Our <strong>VIT attendance calculator</strong> helps you run this math instantly. For other institutions, check the <a href="index.html">main homepage</a> to run custom parameters.</p>
+
+          <h2>Compare Other University Rules</h2>
+          <p>Check guidelines and use preset calculators for other institutions:</p>
+          <div class="uni-presets">
+            <a href="anna-university.html" class="uni-preset-btn">Anna University (75%)</a>
+            <a href="srm.html" class="uni-preset-btn">SRM University (75%)</a>
+            <a href="sathyabama.html" class="uni-preset-btn">Sathyabama University (75%)</a>
+            <a href="saveetha.html" class="uni-preset-btn">Saveetha Engineering College (75%)</a>
+            <a href="hindustan.html" class="uni-preset-btn">HITS Padur (75%)</a>
+          </div>
+
+          <h2 style="margin-top: 2rem;">Frequently Asked Questions</h2>
+          <div class="faq-container">
+            <div class="faq-item">
+              <div class="faq-question">How many classes can I miss in VIT?</div>
+              <div class="faq-answer">
+                Under the 80% rule, you can miss up to 20% of the total sessions. If 40 sessions are conducted, you can safely miss 8.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">What happens if attendance is below 75% at VIT?</div>
+              <div class="faq-answer">
+                If your attendance drops below 75%, there is no condonation, and the student is debarred from the course.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">How is attendance calculated in engineering colleges?</div>
+              <div class="faq-answer">
+                Your college attendance is calculated as: (Total attended hours / Total conducted hours) * 100. Our tool computes this in real-time.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Sidebar Area (Right) -->
       <div class="sidebar">
         <!-- Sidebar Ad Slot -->
         <div class="ad-slot ad-slot-sidebar">
