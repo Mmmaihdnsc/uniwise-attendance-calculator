@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // DOM Elements
+  // DOM Elements - Main Calculator
   const universitySelect = document.getElementById('university');
   const totalClassesInput = document.getElementById('total-classes');
   const attendedClassesInput = document.getElementById('attended-classes');
@@ -16,16 +16,51 @@ document.addEventListener('DOMContentLoaded', () => {
   const shareButton = document.getElementById('btn-share');
   const toast = document.getElementById('toast');
 
-  // University Presets mapping
+  // DOM Elements - Modules
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  // Module 1 (Absence Buffer) Output Elements
+  const bufTargetDisplay = document.getElementById('buf-target');
+  const bufCurrentDisplay = document.getElementById('buf-current');
+  const bufBunksDisplay = document.getElementById('buf-bunks');
+  const bufRiskDisplay = document.getElementById('buf-risk');
+
+  // Module 3 (Recovery) Output Elements
+  const recPlanContainer = document.getElementById('recovery-plan-steps');
+
+  // Module 4 (Bunk Calculator) Input & Output Elements
+  const bunkCurrentInput = document.getElementById('bunk-current-pct');
+  const bunkTotalInput = document.getElementById('bunk-total-classes');
+  const bunkLimitDisplay = document.getElementById('bunk-limit-val');
+  const bunkRiskDisplay = document.getElementById('bunk-risk-status');
+
+  // Presets mapping
   const universityPresets = {
     'anna': 75,
     'srm': 75,
-    'sathyabama': 75,
     'vit': 80,
+    'sathyabama': 75,
     'saveetha': 75,
-    'hindustan': 75,
+    'hits': 75,
     'custom': 75
   };
+
+  // 1. Tab Switching Functionality
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetTab = btn.getAttribute('data-tab');
+      
+      tabButtons.forEach(b => b.classList.remove('active'));
+      tabContents.forEach(c => c.classList.remove('active'));
+      
+      btn.classList.add('active');
+      document.getElementById(targetTab).classList.add('active');
+
+      // Trigger sub-module updates when tabs are clicked
+      updateModules();
+    });
+  });
 
   // FAQ Accordion Toggle
   const faqItems = document.querySelectorAll('.faq-item');
@@ -40,15 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Read query params to auto-select university
-  const urlParams = new URLSearchParams(window.location.search);
-  const uniParam = urlParams.get('uni');
-  if (uniParam && universityPresets[uniParam] !== undefined) {
-    universitySelect.value = uniParam;
-    requiredPercentageInput.value = universityPresets[uniParam];
-  }
-
-  // Handle University Select Change
+  // Handle University Preset Change
   universitySelect.addEventListener('change', (e) => {
     const selectedUni = e.target.value;
     if (universityPresets[selectedUni] !== undefined) {
@@ -57,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Input validation and live calculation
+  // Live calculations trigger
   [totalClassesInput, attendedClassesInput, requiredPercentageInput].forEach(input => {
     input.addEventListener('input', () => {
       if (input.value < 0) {
@@ -67,7 +94,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Calculate Attendance Logic
+  // Bunk Calculator module direct inputs trigger
+  [bunkCurrentInput, bunkTotalInput].forEach(input => {
+    input.addEventListener('input', () => {
+      if (input.value < 0) {
+        input.value = 0;
+      }
+      calculateModule4();
+    });
+  });
+
+  // 2. Core Calculator Logic
   function calculateAttendance() {
     const total = parseInt(totalClassesInput.value) || 0;
     const attended = parseInt(attendedClassesInput.value) || 0;
@@ -86,6 +123,12 @@ document.addEventListener('DOMContentLoaded', () => {
       safeAbsencesValue.className = 'metric-value';
       classesToAttendValue.textContent = '0';
       classesToAttendValue.className = 'metric-value';
+
+      // Reset Bunk calculator module fields with defaults if empty
+      bunkCurrentInput.placeholder = "e.g., 78";
+      bunkTotalInput.placeholder = "e.g., 60";
+      
+      updateModules();
       return;
     }
 
@@ -118,15 +161,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       
       if (safeAbsences < 0) safeAbsences = 0;
-
-      if (safeAbsences === 0) {
-        status = 'warning';
-      } else {
-        status = 'safe';
-      }
+      status = safeAbsences === 0 ? 'warning' : 'safe';
     } else {
       status = 'danger';
-      
       if (required >= 100) {
         classesToAttend = 'Impossible';
       } else {
@@ -134,6 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    // Update Status Badge UI
     if (status === 'safe') {
       statusBadge.textContent = 'Safe';
       statusBadge.className = 'status-badge status-safe';
@@ -149,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
       statusBadge.style.boxShadow = '';
       statusRing.style.stroke = 'var(--warning)';
     } else if (status === 'danger') {
-      statusBadge.textContent = 'At Risk';
+      statusBadge.textContent = 'Critical';
       statusBadge.className = 'status-badge status-danger';
       statusBadge.style.background = '';
       statusBadge.style.color = '';
@@ -162,6 +200,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     classesToAttendValue.textContent = classesToAttend;
     classesToAttendValue.className = `metric-value ${classesToAttend > 0 || classesToAttend === 'Impossible' ? 'highlight-danger' : ''}`;
+
+    // Prefill Module 4 Inputs based on Main Calculator values
+    bunkCurrentInput.value = currentPercent.toFixed(1);
+    bunkTotalInput.value = total;
+
+    updateModules();
   }
 
   function setProgress(percent) {
@@ -171,13 +215,172 @@ document.addEventListener('DOMContentLoaded', () => {
     statusRing.style.strokeDashoffset = offset;
   }
 
+  // 3. Multi-Tool Modules Update Engine
+  function updateModules() {
+    calculateModule1();
+    calculateModule3();
+    calculateModule4();
+  }
+
+  // MODULE 1: How Many Classes Can I Miss
+  function calculateModule1() {
+    const total = parseInt(totalClassesInput.value) || 0;
+    const attended = parseInt(attendedClassesInput.value) || 0;
+    const required = parseFloat(requiredPercentageInput.value) || 75;
+
+    bufTargetDisplay.textContent = `${required}%`;
+
+    if (total === 0) {
+      bufCurrentDisplay.textContent = '0.0%';
+      bufBunksDisplay.textContent = '0';
+      bufRiskDisplay.textContent = 'Enter stats above';
+      bufRiskDisplay.className = 'metric-value';
+      return;
+    }
+
+    const current = (attended / total) * 100;
+    bufCurrentDisplay.textContent = `${current.toFixed(1)}%`;
+
+    let safeBunks = 0;
+    if (current >= required) {
+      safeBunks = Math.floor((100 * attended) / required) - total;
+      if (safeBunks < 0) safeBunks = 0;
+    }
+
+    bufBunksDisplay.textContent = safeBunks;
+
+    if (current < required) {
+      bufRiskDisplay.textContent = 'Critical (Below Target)';
+      bufRiskDisplay.className = 'metric-value highlight-danger';
+    } else if (safeBunks === 0) {
+      bufRiskDisplay.textContent = 'Warning (No margin left)';
+      bufRiskDisplay.className = 'metric-value highlight-danger';
+      bufRiskDisplay.style.color = 'var(--warning)';
+    } else {
+      bufRiskDisplay.textContent = 'Safe';
+      bufRiskDisplay.className = 'metric-value highlight-safe';
+      bufRiskDisplay.style.color = 'var(--success)';
+    }
+  }
+
+  // MODULE 3: How to Regain Attendance (Recovery Plan)
+  function calculateModule3() {
+    const total = parseInt(totalClassesInput.value) || 0;
+    const attended = parseInt(attendedClassesInput.value) || 0;
+    const required = parseFloat(requiredPercentageInput.value) || 75;
+
+    if (total === 0) {
+      recPlanContainer.innerHTML = `
+        <div class="tip-card" style="text-align: center; color: var(--text-secondary);">
+          Please enter your current total and attended classes above to generate a recovery plan.
+        </div>
+      `;
+      return;
+    }
+
+    const current = (attended / total) * 100;
+
+    if (current >= required) {
+      recPlanContainer.innerHTML = `
+        <div class="tip-card" style="border-color: var(--success); text-align: center;">
+          <h4 style="color: var(--success); margin-bottom: 0.25rem;">✔ No Recovery Plan Needed</h4>
+          <p class="tip-content">Your current attendance (${current.toFixed(1)}%) is above your required target (${required}%). Keep maintaining it!</p>
+        </div>
+      `;
+      return;
+    }
+
+    let recoveryClasses = 0;
+    if (required >= 100) {
+      recPlanContainer.innerHTML = `
+        <div class="tip-card" style="border-color: var(--danger); text-align: center;">
+          <h4 style="color: var(--danger); margin-bottom: 0.25rem;">⚠️ Impossible to Recover</h4>
+          <p class="tip-content">It is mathematically impossible to reach 100% attendance because you have already missed at least one class session.</p>
+        </div>
+      `;
+      return;
+    }
+
+    recoveryClasses = Math.ceil((required * total - 100 * attended) / (100 - required));
+    const targetTotal = total + recoveryClasses;
+    const targetAttended = attended + recoveryClasses;
+
+    recPlanContainer.innerHTML = `
+      <ol class="steps-list">
+        <li class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-details">
+            <h4>Attend ${recoveryClasses} Consecutive Sessions</h4>
+            <p>You must attend the next ${recoveryClasses} classes in a row without missing any to hit your target.</p>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-details">
+            <h4>Reach Target Threshold</h4>
+            <p>Your session counts will rise to ${targetAttended}/${targetTotal} classes, pulling your average to exactly ${((targetAttended/targetTotal)*100).toFixed(1)}%.</p>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-details">
+            <h4>Submit Official Permissions (If Any)</h4>
+            <p>If some absences were due to official duties or illness, verify that your HOD has approved your OD/medical certificates on the portal to credit your logs.</p>
+          </div>
+        </li>
+      </ol>
+    `;
+  }
+
+  // MODULE 4: Bunk Calculator
+  function calculateModule4() {
+    const current = parseFloat(bunkCurrentInput.value) || 0;
+    const total = parseInt(bunkTotalInput.value) || 0;
+    const required = parseFloat(requiredPercentageInput.value) || 75;
+
+    if (total === 0 || current === 0) {
+      bunkLimitDisplay.textContent = '0';
+      bunkRiskDisplay.textContent = 'Enter values';
+      bunkRiskDisplay.style.color = 'var(--text-secondary)';
+      return;
+    }
+
+    // Reconstruct attended classes from percentage
+    const attended = Math.round((current / 100) * total);
+
+    let bunkLimit = 0;
+    if (current >= required) {
+      if (required > 0) {
+        bunkLimit = Math.floor((100 * attended) / required) - total;
+      }
+      if (bunkLimit < 0) bunkLimit = 0;
+    }
+
+    bunkLimitDisplay.textContent = bunkLimit;
+
+    if (current < required) {
+      bunkRiskDisplay.textContent = 'Critical (Defaulter)';
+      bunkRiskDisplay.style.color = 'var(--danger)';
+    } else if (bunkLimit === 0) {
+      bunkRiskDisplay.textContent = 'Warning (Bunk Buffer Exhausted)';
+      bunkRiskDisplay.style.color = 'var(--warning)';
+    } else {
+      bunkRiskDisplay.textContent = 'Safe (Has Buffer)';
+      bunkRiskDisplay.style.color = 'var(--success)';
+    }
+  }
+
+  // 4. Interactive Elements triggers
   resetButton.addEventListener('click', () => {
     totalClassesInput.value = '';
     attendedClassesInput.value = '';
-    
     universitySelect.value = 'anna';
     requiredPercentageInput.value = 75;
     
+    // Reset Bunk calculator module fields
+    bunkCurrentInput.value = '';
+    bunkTotalInput.value = '';
+
     calculateAttendance();
     showToast('All fields reset successfully.');
   });
@@ -190,30 +393,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const attended = parseInt(attendedClassesInput.value) || 0;
-    const required = parseFloat(requiredPercentageInput.value) || 0;
+    const required = parseFloat(requiredPercentageInput.value) || 75;
     const currentPercent = ((attended / total) * 100).toFixed(1);
     
     const uniName = universitySelect.options[universitySelect.selectedIndex].text;
     const currentStatus = statusBadge.textContent;
     
-    let shareText = `UniWise Attendance Calc 🏫\n`;
-    shareText += `University: ${uniName}\n`;
+    let shareText = `College Attendance Calculator 🏫\n`;
+    shareText += `Institution: ${uniName}\n`;
     shareText += `Current Attendance: ${currentPercent}% (${currentStatus})\n`;
     
     if (currentPercent >= required) {
       const safeAbs = safeAbsencesValue.textContent;
-      shareText += `I can safely miss: ${safeAbs} more classes!\n`;
+      shareText += `Permissible Bunks left: ${safeAbs} classes!\n`;
     } else {
       const reqToAttend = classesToAttendValue.textContent;
-      shareText += `Required consecutive classes: ${reqToAttend} to reach ${required}%\n`;
+      shareText += `Required makeup sessions: ${reqToAttend} consecutive classes to hit ${required}%\n`;
     }
-    shareText += `Calculate yours here: ${window.location.origin}${window.location.pathname}?uni=${universitySelect.value}`;
+    shareText += `Calculate yours here: ${window.location.origin}${window.location.pathname}`;
 
     navigator.clipboard.writeText(shareText).then(() => {
-      showToast('Result summary copied to clipboard!');
+      showToast('Attendance summary copied to clipboard!');
     }).catch(err => {
       console.error('Could not copy text: ', err);
-      showToast('Failed to copy. Please copy the page URL.');
+      showToast('Copy failed. Please manually copy the URL.');
     });
   });
 
@@ -225,7 +428,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const title = card.querySelector('.product-title').textContent;
       showToast(`Redirecting to secure UPI payment for: ${title}...`);
       setTimeout(() => {
-        showToast("Feature Coming Soon: Payment portals will be live shortly!");
+        showToast("SaaS Feature Coming Soon: Checkout portals will be live shortly!");
       }, 1500);
     });
   });
@@ -235,7 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
   proToolItems.forEach(item => {
     item.addEventListener('click', () => {
       const name = item.querySelector('.pro-tool-name').textContent;
-      showToast(`${name} is locked. Pro Tools launching soon!`);
+      showToast(`${name} is locked. UniWise Pro SaaS dashboard launching soon!`);
     });
   });
 
