@@ -1,0 +1,16 @@
+# Windows thumbnail cache
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Folder config file
+Folder.jpg
+Folder.db
+[V|v]olume[C|c]haracter[I|i]nformation
+
+# Node modules (if any in future)
+node_modules/
+
+# Local server log or env files
+.env
+*.log

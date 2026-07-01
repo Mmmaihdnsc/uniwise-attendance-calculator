@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Sathyabama Attendance Calculator | UniWise</title>
+  <meta name="description" content="Calculate your Sathyabama attendance percentage online. Check Sathyabama rules, 75% attendance calculator limits, and condonation requirements on UniWise.">
+  <meta name="keywords" content="Sathyabama attendance calculator UniWise, Sathyabama attendance rules, Sathyabama hall ticket attendance requirement, attendance calculator college, 75% attendance calculator, how many classes can I miss">
+  <meta name="author" content="UniWise">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://uniwise.pages.dev/sathyabama.html">
+  <meta property="og:title" content="Sathyabama Attendance Calculator | UniWise">
+  <meta property="og:description" content="Calculate your Sathyabama attendance percentage online. Check Sathyabama rules, 75% attendance calculator limits, and condonation requirements on UniWise.">
+  <meta property="og:image" content="https://uniwise.pages.dev/assets/images/og-image.jpg">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- JSON-LD Structured Data for FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the attendance requirement at Sathyabama University?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sathyabama Institute of Science and Technology requires students to maintain a minimum of 75% attendance in each course to be eligible to receive the semester exam hall ticket."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the shortage rule at Sathyabama?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If attendance is between 65% and 74%, you can get condoned. If it is below 65%, you are debarred from examinations and must repeat the semester."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">UniWise <span>– Smart Attendance Calculator</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="anna-university.html">Anna Uni</a></li>
+        <li><a href="srm.html">SRM</a></li>
+        <li><a href="vit.html">VIT</a></li>
+        <li><a href="sathyabama.html" class="active">Sathyabama</a></li>
+        <li><a href="saveetha.html">Saveetha</a></li>
+        <li><a href="hindustan.html">HITS</a></li>
+        <li><a href="how-many-classes-can-i-miss.html">Guide</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Ad banner top -->
+    <div class="ad-slot">
+      <span>Place Ad Here (Google AdSense Responsive Banner Slot)</span>
+    </div>
+
+    <!-- Layout Grid -->
+    <div class="main-layout">
+      <!-- Main Content Area -->
+      <div class="main-content">
+        <!-- Page Heading -->
+        <div style="margin-bottom: 1.5rem;">
+          <h1 style="font-size: 2.25rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Sathyabama Attendance Calculator</h1>
+          <p style="color: var(--text-secondary);">Verify Sathyabama Institute of Science and Technology attendance limits and safe absences.</p>
+        </div>
+
+        <!-- Dashboard Widget Container -->
+        <div class="dashboard-grid">
+          <!-- Calculator Card -->
+          <div class="card">
+            <h2 class="card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--primary);"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
+              Sathyabama Preset
+            </h2>
+            
+            <div class="form-group">
+              <label for="university">Select University / Institution</label>
+              <select id="university">
+                <option value="anna">Anna University (75% Rule)</option>
+                <option value="srm">SRM Institute of Science and Technology (75%)</option>
+                <option value="sathyabama" selected>Sathyabama Institute of Science & Tech (75%)</option>
+                <option value="vit">VIT University (80% - Adjustable)</option>
+                <option value="saveetha">Saveetha Engineering College (75%)</option>
+                <option value="hindustan">Hindustan Institute of Tech & Science (75%)</option>
+                <option value="custom">Custom (User-Defined %)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="total-classes">Total Classes Conducted</label>
+              <div class="input-container">
+                <input type="number" id="total-classes" placeholder="e.g., 70" min="0">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="attended-classes">Classes Attended</label>
+              <div class="input-container">
+                <input type="number" id="attended-classes" placeholder="e.g., 55" min="0">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="required-percentage">Required Attendance Percentage (%)</label>
+              <div class="input-container">
+                <input type="number" id="required-percentage" value="75" min="0" max="100">
+              </div>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn-secondary" id="btn-reset">Reset Fields</button>
+              <button type="button" class="btn-primary" id="btn-share">Share Result</button>
+            </div>
+          </div>
+
+          <!-- Outputs Card -->
+          <div class="card results-card">
+            <h2 class="card-title">Live Analysis</h2>
+            
+            <div class="status-ring-container">
+              <svg class="status-ring-svg">
+                <circle class="status-ring-bg" cx="90" cy="90" r="80"></circle>
+                <circle class="status-ring-progress" id="status-ring" cx="90" cy="90" r="80"></circle>
+              </svg>
+              <div class="status-ring-text">
+                <div class="attendance-percentage" id="attendance-value">0.0%</div>
+                <div class="attendance-label">Current Attendance</div>
+              </div>
+            </div>
+
+            <span class="status-badge" id="status-badge" style="background: rgba(255, 255, 255, 0.05); color: var(--text-secondary);">Enter Details</span>
+
+            <div class="metrics-grid">
+              <div class="metric-box">
+                <span class="metric-label">Safe Absences (can miss)</span>
+                <span class="metric-value" id="safe-absences-value">0</span>
+              </div>
+              <div class="metric-box">
+                <span class="metric-label">Classes to Attend (makeup)</span>
+                <span class="metric-value" id="classes-to-attend-value">0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SEO Content -->
+        <div class="article-content">
+          <h2>Sathyabama Institute of Science and Technology Attendance Rules</h2>
+          <p>Sathyabama Institute of Science and Technology enforces a strict class presence framework. Under university regulations, students need to maintain a <strong>75% attendance calculator</strong> score in each subject to ensure hall ticket release.</p>
+          
+          <p>Using our <strong>attendance calculator college</strong> widget, Sathyabama students can see their status in real-time. If you find your values dropping, the tool calculates exactly how many consecutive classes you must attend to catch up. A link to the <a href="index.html">main homepage</a> helps you try other presets.</p>
+
+          <h2>Sathyabama Condonation & Shortage Details</h2>
+          <p>Shortages below 75% down to 65% are subject to a condonation fine upon submitting official medical letters. Below 65%, no condonation will be approved, meaning the student is debarred from exams and must register to repeat the semester courses.</p>
+
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-container">
+            <div class="faq-item">
+              <div class="faq-question">What is the debarment rule at Sathyabama?</div>
+              <div class="faq-answer">
+                Students with overall attendance below 65% are debarred. They are not allowed to sit for final semester examinations and must register for the courses in later semesters.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">How can I check my attendance at Sathyabama?</div>
+              <div class="faq-answer">
+                Students can check their subject-wise attendance logs directly on the official Sathyabama student portal.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Area -->
+      <div class="sidebar">
+        <!-- Sidebar Ad Slot -->
+        <div class="ad-slot ad-slot-sidebar">
+          <span>Place Ad Here (Google AdSense Vertical Banner Slot)</span>
+        </div>
+
+        <!-- Premium Tools Section -->
+        <div class="card">
+          <h2 class="card-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--secondary);"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            UniWise Pro Tools
+          </h2>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">Unlock advanced planning tools to maximize your academic performance.</p>
+          
+          <div class="pro-tool-item">
+            <div class="pro-tool-info">
+              <span class="pro-tool-name">Attendance Planner</span>
+              <span class="pro-tool-desc">Plan absences across multiple subjects</span>
+            </div>
+            <div class="pro-tool-lock">
+              <span class="pro-tool-badge">Coming Soon</span>
+            </div>
+          </div>
+
+          <div class="pro-tool-item">
+            <div class="pro-tool-info">
+              <span class="pro-tool-name">Exam Score Prediction</span>
+              <span class="pro-tool-desc">Correlate attendance with GPA trends</span>
+            </div>
+            <div class="pro-tool-lock">
+              <span class="pro-tool-badge">Coming Soon</span>
+            </div>
+          </div>
+
+          <div class="pro-tool-item">
+            <div class="pro-tool-info">
+              <span class="pro-tool-name">Personalized Study Planner</span>
+              <span class="pro-tool-desc">Dynamic alerts and class schedules</span>
+            </div>
+            <div class="pro-tool-lock">
+              <span class="pro-tool-badge">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Digital Product Cards -->
+        <div class="digital-product-card">
+          <span class="product-tag">Hot</span>
+          <h3 class="product-title">College Survival Guide</h3>
+          <p class="product-desc">The ultimate guidebook for college students in Tamil Nadu. Includes survival tips, exam strategies, and resources.</p>
+          <div class="product-price-section">
+            <span class="price-current">₹49</span>
+            <span class="price-original">₹199</span>
+          </div>
+          <button type="button" class="product-btn">Buy Survival Guide</button>
+        </div>
+
+        <div class="digital-product-card">
+          <span class="product-tag">Free Bundle</span>
+          <h3 class="product-title">Attendance Tracking Excel Sheet</h3>
+          <p class="product-desc">Download a fully formatted Excel tracker to record your attendance day-by-day across all semester subjects offline.</p>
+          <div class="product-price-section">
+            <span class="price-current">₹0</span>
+            <span class="price-original">₹49</span>
+          </div>
+          <button type="button" class="product-btn">Get Tracker Sheet</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="anna-university.html">Anna University</a>
+        <a href="srm.html">SRM IST</a>
+        <a href="vit.html">VIT University</a>
+        <a href="sathyabama.html">Sathyabama</a>
+        <a href="saveetha.html">Saveetha</a>
+        <a href="hindustan.html">HITS</a>
+        <a href="how-many-classes-can-i-miss.html">Calculation Guide</a>
+      </div>
+      <p>&copy; 2026 UniWise Attendance Calculator. Created for students in Tamil Nadu. Optimize your academic performance.</p>
+    </div>
+  </footer>
+
+  <!-- Toast Message -->
+  <div id="toast" class="toast">Result copied to clipboard!</div>
+
+  <!-- Scripts -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

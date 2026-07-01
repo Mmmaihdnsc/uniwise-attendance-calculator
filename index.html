@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Tamil Nadu College Attendance Calculator | UniWise</title>
+  <meta name="description" content="Use the engineering attendance calculator Tamil Nadu students trust. Learn how many classes can I miss and maintain 75% attendance using UniWise.">
+  <meta name="keywords" content="attendance calculator college, 75% attendance calculator, how many classes can I miss, engineering attendance calculator Tamil Nadu, Anna University attendance rule">
+  <meta name="author" content="UniWise">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://uniwise.pages.dev/">
+  <meta property="og:title" content="Tamil Nadu College Attendance Calculator | UniWise">
+  <meta property="og:description" content="Use the engineering attendance calculator Tamil Nadu students trust. Learn how many classes can I miss and maintain 75% attendance using UniWise.">
+  <meta property="og:image" content="https://uniwise.pages.dev/assets/images/og-image.jpg">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- JSON-LD Structured Data for FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is my college attendance percentage calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your college attendance percentage is calculated using the formula: (Attended Classes / Total Classes Conducted) * 100. Our attendance calculator college tool computes this instantly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the 75% attendance calculator safe absence formula?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For a 75% attendance rule, the number of safe absences you can have is calculated by: floor((100 * Attended Classes) / 75) - Total Classes Conducted. This tells you exactly how many classes you can safely miss."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I fail to maintain 75% attendance in engineering colleges in Tamil Nadu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you fall below 75% but stay above 65%, you are in the condonation zone and must submit medical proofs and pay a condonation fee. Below 65%, you are debarred and must repeat the courses next year."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">UniWise <span>– Smart Attendance Calculator</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="anna-university.html">Anna Uni</a></li>
+        <li><a href="srm.html">SRM</a></li>
+        <li><a href="vit.html">VIT</a></li>
+        <li><a href="sathyabama.html">Sathyabama</a></li>
+        <li><a href="saveetha.html">Saveetha</a></li>
+        <li><a href="hindustan.html">HITS</a></li>
+        <li><a href="how-many-classes-can-i-miss.html">Guide</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Ad banner top -->
+    <div class="ad-slot">
+      <span>Place Ad Here (Google AdSense Responsive Banner Slot)</span>
+    </div>
+
+    <!-- Layout Grid -->
+    <div class="main-layout">
+      <!-- Main Content Area -->
+      <div class="main-content">
+        
+        <!-- Dashboard Widget Container -->
+        <div class="dashboard-grid">
+          <!-- Calculator Card -->
+          <div class="card">
+            <h2 class="card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--primary);"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
+              Attendance Calculator
+            </h2>
+            
+            <div class="form-group">
+              <label for="university">Select University / Institution</label>
+              <select id="university">
+                <option value="anna" selected>Anna University (75% Rule)</option>
+                <option value="srm">SRM Institute of Science and Technology (75%)</option>
+                <option value="sathyabama">Sathyabama Institute of Science & Tech (75%)</option>
+                <option value="vit">VIT University (80% - Adjustable)</option>
+                <option value="saveetha">Saveetha Engineering College (75%)</option>
+                <option value="hindustan">Hindustan Institute of Tech & Science (75%)</option>
+                <option value="custom">Custom (User-Defined %)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="total-classes">Total Classes Conducted</label>
+              <div class="input-container">
+                <input type="number" id="total-classes" placeholder="e.g., 60" min="0">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="attended-classes">Classes Attended</label>
+              <div class="input-container">
+                <input type="number" id="attended-classes" placeholder="e.g., 48" min="0">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="required-percentage">Required Attendance Percentage (%)</label>
+              <div class="input-container">
+                <input type="number" id="required-percentage" value="75" min="0" max="100">
+              </div>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn-secondary" id="btn-reset">Reset Fields</button>
+              <button type="button" class="btn-primary" id="btn-share">Share Result</button>
+            </div>
+          </div>
+
+          <!-- Outputs Card -->
+          <div class="card results-card">
+            <h2 class="card-title">Live Analysis</h2>
+            
+            <div class="status-ring-container">
+              <svg class="status-ring-svg">
+                <circle class="status-ring-bg" cx="90" cy="90" r="80"></circle>
+                <circle class="status-ring-progress" id="status-ring" cx="90" cy="90" r="80"></circle>
+              </svg>
+              <div class="status-ring-text">
+                <div class="attendance-percentage" id="attendance-value">0.0%</div>
+                <div class="attendance-label">Current Attendance</div>
+              </div>
+            </div>
+
+            <span class="status-badge" id="status-badge" style="background: rgba(255, 255, 255, 0.05); color: var(--text-secondary);">Enter Details</span>
+
+            <div class="metrics-grid">
+              <div class="metric-box">
+                <span class="metric-label">Safe Absences (can miss)</span>
+                <span class="metric-value" id="safe-absences-value">0</span>
+              </div>
+              <div class="metric-box">
+                <span class="metric-label">Classes to Attend (makeup)</span>
+                <span class="metric-value" id="classes-to-attend-value">0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SEO and Blog content -->
+        <div class="article-content">
+          <h1>Tamil Nadu College Attendance Calculator – UniWise</h1>
+          <p>Welcome to UniWise, the most reliable <strong>engineering attendance calculator Tamil Nadu</strong> college students use to track their attendance, calculate safe absences, and avoid debarment. Academic institutions across Chennai, Coimbatore, Madurai, and other cities enforce strict guidelines that determine whether you can write your final exams. UniWise helps you navigate these rules with ease.</p>
+
+          <h2>How to Use the 75% Attendance Calculator</h2>
+          <p>For most students in engineering, arts, and science degrees, the <strong>75% attendance calculator</strong> is the golden standard. If your percentage falls below 75%, it can impact your grades and semester eligibility. To use this tool, follow these simple steps:</p>
+          <ol>
+            <li>Select your university (like Anna University, SRM, VIT, or Saveetha) or select "Custom" to set your own target.</li>
+            <li>Input the <strong>Total Classes Conducted</strong> in your courses so far.</li>
+            <li>Input the number of <strong>Classes Attended</strong>.</li>
+            <li>Review the live status feedback: our tool shows you how many classes you can safely miss starting from today, or how many consecutive classes you must attend to cross the safe limit.</li>
+          </ol>
+
+          <h2>How Many Classes Can I Miss?</h2>
+          <p>The mathematical breathing room of college life is called **safe absences**. If your attendance is currently strong, you don't need to attend every single session. But how many classes can you miss? If you have attended 45 out of 50 classes (90%), and your university requires a 75% standard, the calculation is:</p>
+          <p style="background: rgba(255,255,255,0.03); padding: 0.75rem 1rem; border-radius: 8px; font-family: monospace; border: 1px solid var(--border-color);">
+            Safe Absences = floor((100 * 45) / 75) - 50 = 60 - 50 = 10 classes.
+          </p>
+          <p>This means you can skip up to 10 classes and still stay exactly on the 75% line. If you exceed this buffer, your status will turn into a "Warning" or "At Risk" category.</p>
+
+          <h2>UniWise Student Survival Blog</h2>
+          <div class="blog-feed">
+            <div class="blog-card">
+              <h3>Anna University Attendance Rule Regulation 2021</h3>
+              <p>Everything you need to know about medical certificates, condonation fee payments, and debarment terms in Regulation 2021.</p>
+              <a href="anna-university.html" class="blog-link">Read Guide &rarr;</a>
+            </div>
+            <div class="blog-card">
+              <h3>How to Request an On-Duty (OD) Leave</h3>
+              <p>Learn the format to draft OD letters for symposiums, sports events, and cultural representation to credit your attendance.</p>
+              <a href="how-many-classes-can-i-miss.html" class="blog-link">Read Guide &rarr;</a>
+            </div>
+          </div>
+
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-container">
+            <div class="faq-item">
+              <div class="faq-question">What is the standard "attendance calculator college" formula?</div>
+              <div class="faq-answer">
+                The basic attendance calculation is: (Attended classes / Total classes conducted) * 100. Our tool uses this formula and matches it against your university's guidelines to give you safe buffers.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">How does a 75% attendance calculator find safe absences?</div>
+              <div class="faq-answer">
+                It takes your attended classes, determines the maximum total sessions you could have at a 75% ratio, and subtracts the actual classes conducted. The formula is: floor((100 * Attended) / 75) - Conducted.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Can I use this for Anna University Regulation 2021 rules?</div>
+              <div class="faq-answer">
+                Yes, our Anna University mode is pre-configured with the standard 75% target, which corresponds to the requirements outlined in Regulation 2021 and Regulation 2017.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Area -->
+      <div class="sidebar">
+        <!-- Sidebar Ad Slot -->
+        <div class="ad-slot ad-slot-sidebar">
+          <span>Place Ad Here (Google AdSense Vertical Banner Slot)</span>
+        </div>
+
+        <!-- Premium Tools Section -->
+        <div class="card">
+          <h2 class="card-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--secondary);"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            UniWise Pro Tools
+          </h2>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">Unlock advanced planning tools to maximize your academic performance.</p>
+          
+          <div class="pro-tool-item">
+            <div class="pro-tool-info">
+              <span class="pro-tool-name">Attendance Planner</span>
+              <span class="pro-tool-desc">Plan absences across multiple subjects</span>
+            </div>
+            <div class="pro-tool-lock">
+              <span class="pro-tool-badge">Coming Soon</span>
+            </div>
+          </div>
+
+          <div class="pro-tool-item">
+            <div class="pro-tool-info">
+              <span class="pro-tool-name">Exam Score Prediction</span>
+              <span class="pro-tool-desc">Correlate attendance with GPA trends</span>
+            </div>
+            <div class="pro-tool-lock">
+              <span class="pro-tool-badge">Coming Soon</span>
+            </div>
+          </div>
+
+          <div class="pro-tool-item">
+            <div class="pro-tool-info">
+              <span class="pro-tool-name">Personalized Study Planner</span>
+              <span class="pro-tool-desc">Dynamic alerts and class schedules</span>
+            </div>
+            <div class="pro-tool-lock">
+              <span class="pro-tool-badge">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Digital Product Cards -->
+        <div class="digital-product-card">
+          <span class="product-tag">Hot</span>
+          <h3 class="product-title">College Survival Guide</h3>
+          <p class="product-desc">The ultimate guidebook for college students in Tamil Nadu. Includes survival tips, exam strategies, and resources.</p>
+          <div class="product-price-section">
+            <span class="price-current">₹49</span>
+            <span class="price-original">₹199</span>
+          </div>
+          <button type="button" class="product-btn">Buy Survival Guide</button>
+        </div>
+
+        <div class="digital-product-card">
+          <span class="product-tag">Free Bundle</span>
+          <h3 class="product-title">Attendance Tracking Excel Sheet</h3>
+          <p class="product-desc">Download a fully formatted Excel tracker to record your attendance day-by-day across all semester subjects offline.</p>
+          <div class="product-price-section">
+            <span class="price-current">₹0</span>
+            <span class="price-original">₹49</span>
+          </div>
+          <button type="button" class="product-btn">Get Tracker Sheet</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="anna-university.html">Anna University</a>
+        <a href="srm.html">SRM IST</a>
+        <a href="vit.html">VIT University</a>
+        <a href="sathyabama.html">Sathyabama</a>
+        <a href="saveetha.html">Saveetha</a>
+        <a href="hindustan.html">HITS</a>
+        <a href="how-many-classes-can-i-miss.html">Calculation Guide</a>
+      </div>
+      <p>&copy; 2026 UniWise Attendance Calculator. Created for students in Tamil Nadu. Optimize your academic performance.</p>
+    </div>
+  </footer>
+
+  <!-- Toast Message -->
+  <div id="toast" class="toast">Result copied to clipboard!</div>
+
+  <!-- Scripts -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
